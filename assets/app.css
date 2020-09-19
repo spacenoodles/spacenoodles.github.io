@@ -49,3 +49,7 @@
     z-index: 22;
     padding: 20px;
 }
+
+#footer .btn {
+    padding: 20px 30px;
+}

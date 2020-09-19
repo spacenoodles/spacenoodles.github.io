@@ -11,6 +11,7 @@ var scannerContainer;
 var loginContainer;
 var startButton;
 var stopButton;
+var isScanning = false;
 
 window.onload = function () {
     // get the containers
@@ -34,6 +35,9 @@ window.onload = function () {
     // initiate button listen events
     startButton.addEventListener('click', startScanning, false);
     stopButton.addEventListener('click', stopScanning, false);
+
+    // listen for keypress
+    document.addEventListener('keyup', doKeypress);
 
     // initiate the cart
     initiateCart();
@@ -60,28 +64,40 @@ window.resize = function () {
 };
 
 /**
+ * detecting keypress
+ */
+function doKeypress(event) {
+    console.log(event.key);
+}
+
+/**
  * Start scanning for qr codes
  */
 function startScanning() {
-    // check for camera
-    if (!QrScanner.hasCamera()) {
-        console.log('no camera available');
-        return false;
+    if (!isScanning) {
+        // set is scanning
+        isScanning = true;
+
+        // check for camera
+        if (!QrScanner.hasCamera()) {
+            console.log('no camera available');
+            return false;
+        }
+
+        // disable button
+        startButton.disabled = true;
+
+        // show the scanner
+        scannerContainer.style.display = "block";
+
+        // start the scanner
+        qrScanner.start();
+
+        // 10 second scanning timer
+        timer = setTimeout(function () {
+            stopScanning();
+        }, 10000);
     }
-
-    // disable button
-    startButton.disabled = true;
-
-    // show the scanner
-    scannerContainer.style.display = "block";
-
-    // start the scanner
-    qrScanner.start();
-
-    // 10 second scanning timer
-    timer = setTimeout(function () {
-        stopScanning();
-    }, 10000);
 }
 
 function handleQRCode(result) {
@@ -353,6 +369,8 @@ function playRegister() {
  * Stop scanning for codes
  */
 function stopScanning() {
+    // unset scanning flag
+    isScanning = false;
     // enable the scan button
     startButton.disabled = false;
     // hide the scanner
