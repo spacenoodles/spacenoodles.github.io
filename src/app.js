@@ -63,7 +63,9 @@ window.resize = function() {
  * detecting keypress
  */
 function doKeypress(event) {
-    console.log(event.key);
+    if(event.key == "s") {
+        startScanning();
+    }
 }
 
 /**
