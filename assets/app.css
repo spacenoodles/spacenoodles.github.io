@@ -1,0 +1,47 @@
+.header {
+    position: absolute;
+    top: 0;
+    z-index: 22;
+    padding: 0;
+}
+
+#login {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+    z-index: 20;
+}
+
+#login .card {
+    width: 300px;
+    margin: 25px auto;
+}
+
+#video-scanner {
+    display: none;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 21
+}
+
+.content {
+    padding-top: 51px;
+}
+
+.totals {
+    padding-top: 10px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 22;
+    padding: 20px;
+}

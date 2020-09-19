@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kiddie Cashier</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/app.css" />
+    </head>
+    <body>
+
+        <div class="header container-fluid">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    </svg>
+                  Kiddie Cashier
+                </a>
+                <p>
+                    <span id="employee-name"></span>
+                    <span> - </span>
+                    <span id="store"></span>
+                </p>
+              </nav>
+        </div>
+
+        <div id="login" class="container-fluid bg-info">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Welcome</h5>
+                  <p class="card-text">Please scan your employee badge.</p>
+                </div>
+              </div>
+        </div>
+
+        <div id="video-scanner" class="container-fluid">
+            <video id="scanner"></video>
+        </div>
+
+        <div class="content container-fluid">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody id="cart">
+                </tbody>
+              </table>
+
+            <div class="row totals">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2 font-weight-bold">
+                    <p>Subtotal:</p>
+                    <p>Tax:</p>
+                    <p>Grand Total:</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>$<span id="subtotal">0.00</span></p>
+                    <p>$<span id="tax">0.00</span></p>
+                    <p>$<span id="grand">0.00</span></p>
+                </div>
+            </div>
+
+            <div class="row totals">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6">
+                    <p><span id="paid-amount"></span></p>
+                    <p><span id="paid-name"></span></p>
+                    <p><span id="card-number"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="container-fluid">
+            <div class="float-right">
+                <button id="stop-button" type="button" class="btn btn-danger btn-large">Stop</button>
+                <button id="start-button" type="button" class="btn btn-success btn-large">Scan</button>
+            </div>
+        </div>
+
+        <script src="assets/qr-scanner.umd.min.js"></script>
+        <script type="module" src="build/app.js"></script>
+    </body>
+</html>

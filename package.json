@@ -1,0 +1,21 @@
+{
+  "name": "kiddie-cashier",
+  "version": "1.0.0",
+  "description": "An app to mimic ringing up items at a store.",
+  "main": "app.js",
+  "scripts": {
+    "build": "babel src -d build"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "http-server": "^0.12.3",
+    "raw-loader": "^4.0.1"
+  },
+  "dependencies": {
+    "qr-scanner": "^1.2.0"
+  }
+}
