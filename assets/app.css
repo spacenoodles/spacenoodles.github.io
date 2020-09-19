@@ -34,6 +34,10 @@
     padding-top: 51px;
 }
 
+.content img {
+    max-width: 50px;
+}
+
 .totals {
     padding-top: 10px;
 }
